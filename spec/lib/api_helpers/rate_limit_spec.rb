@@ -52,7 +52,7 @@ describe RateLimit do
     end
   end
 
-  describe '#check_limit' do
+  describe '#check_limit_exceeded' do
     context 'when the limit has been exceeded' do
       let(:sender) { FFaker::Internet.ip_v4_address }
 
@@ -63,7 +63,7 @@ describe RateLimit do
       end
 
       it 'returns time' do
-        expect(rate_limiter.check_limit).to eq("Rate limit exceeded. Try again in #{interval} seconds")
+        expect(rate_limiter.check_limit_exceeded).to match(%r{Rate limit exceeded. Try again in \d+ seconds})
       end
     end
 
@@ -77,7 +77,7 @@ describe RateLimit do
       end
 
       it 'returns time' do
-        expect(rate_limiter.check_limit).to eq(nil)
+        expect(rate_limiter.check_limit_exceeded).to eq(nil)
       end
     end
   end

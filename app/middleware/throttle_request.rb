@@ -14,10 +14,10 @@ class ThrottleRequest
     rate_limit_check = RateLimit.new(env['REMOTE_ADDR'], env['ORIGINAL_FULLPATH'])
     rate_limit_check.add_sender
 
-    check_limit = rate_limit_check.check_limit
+    rate_limit_exceeded = rate_limit_check.check_limit_exceeded
 
-    if check_limit
-      [429, {'Content-Type' => 'text/plain'}, check_limit]
+    if rate_limit_exceeded
+      [429, {'Content-Type' => 'text/plain'}, rate_limit_exceeded]
     else
       [status, headers, response]
     end

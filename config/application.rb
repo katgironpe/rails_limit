@@ -14,6 +14,7 @@ require "rails/test_unit/railtie"
 require './app/middleware/throttle_request'
 
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
 
 module RailsLimit
   class Application < Rails::Application

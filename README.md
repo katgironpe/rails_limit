@@ -111,6 +111,17 @@ Create the development and test database:
 bundle exec rake db:create
 ```
 
+
+#### Configuring the application
+
+You need to create a `.env` file and have the following:
+
+```
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_DB=api_limit
+```
+
 ## Testing
 
 ```

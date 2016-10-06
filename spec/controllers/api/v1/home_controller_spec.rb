@@ -27,7 +27,7 @@ describe Api::V1::HomeController do
         end
 
         expect(last_response.status).to eq(429)
-        expect(last_response.body).to eq("Rate limit exceeded. Try again in #{interval} seconds")
+        expect(last_response.body).to match(%r{Rate limit exceeded. Try again in \d+ seconds})
       end
     end
   end

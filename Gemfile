@@ -8,6 +8,7 @@ gem 'redis_rate_limiter', '0.0.9'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'dotenv-rails', '2.1.1'
 end
 
 group :development do
