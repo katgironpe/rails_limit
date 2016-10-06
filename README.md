@@ -1,5 +1,7 @@
 # Rails API Rate Limiting Example App
 
+[![Build Status](https://travis-ci.org/katgironpe/rails_limit.svg?branch=master)](https://travis-ci.org/katgironpe/rails_limit)
+
 ## About the app
 
 A Ruby on Rails 5 example for rate-limiting an API.
