@@ -23,7 +23,7 @@ class RateLimit
 
   def check_limit
     if rate_limiter.exceeded?(@sender)
-      "Rate limit exceeded. Try again in #{retry_in.round} seconds"
+      "Rate limit exceeded. Try again in #{retry_in.ceil} seconds"
     end
   end
 end
