@@ -18,6 +18,7 @@ end
 
 group :test do
   gem 'capybara', '2.9.2'
+  gem 'ffaker', '2.2.0'
   gem 'rspec-rails', '~> 3.5.2'
 end
 

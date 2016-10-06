@@ -1,3 +1,0 @@
-api_rate_limit:
-  request_limit: 100
-  minutes: 60
