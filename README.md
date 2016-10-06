@@ -108,3 +108,9 @@ Create the development and test database:
 ```
 bundle exec rake db:create
 ```
+
+## Testing
+
+```
+bundle exec rake
+```
