@@ -11,7 +11,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
-require './app/middleware/rate_limit_check'
+require './app/middleware/throttle_request'
 
 Bundler.require(*Rails.groups)
 
@@ -19,7 +19,7 @@ module RailsLimit
   class Application < Rails::Application
     config.api_only = true
 
-    config.middleware.use RateLimitCheck
+    config.middleware.use ThrottleRequest
 
     config.generators do |g|
       g.test_framework  :rspec
